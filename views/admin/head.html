@@ -1,0 +1,28 @@
+<!-- 导航条组件 -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/admin/home">网站后台</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/admin/home">首页 <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ userInfo.username }}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/editAdmin">修改账户密码</a></li>
+          </ul>
+        </li>
+        <li><a href="/api/user/logout">退出</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

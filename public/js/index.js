@@ -1,0 +1,20 @@
+$('.login-sign').on('click',function(){
+	$.ajax({
+		type:'post',
+		url:'/api/user/register',
+		data:{
+			user:$('[name="user"]').val(),
+			pwd:$('[name="pwd"]').val(),
+			repwd:$('[name="repwd"]').val(),
+		},
+		dataType:'json',
+		success:function(result){
+			console.log(result);
+			$('.reg-err').html(result.message);
+			if(result.code==5){
+				console.log('跳转到登录页面');
+				location.href="/admin/login";
+			}
+		}
+	})
+})

@@ -1,0 +1,29 @@
+.login-page{
+	margin-top:110px;
+}
+.login-page h1{
+	margin-bottom:50px;
+	font-weight:bold;
+	font-size:50px;
+}
+.login-body{
+	background:#eee;
+}
+.addAdmins .breadcrumb{
+	margin:0;
+	padding:0 15px;
+}
+.navigatod .panel-title{
+	position:relative;
+}
+.navigatod .navi-action{
+	position:absolute;
+	right:0;
+	display:inline-block;
+}
+.navigatod .panel-heading{   
+ 	padding: 4px 15px;
+}
+.navigatod .list-group-item .navi-action{
+	margin-right:15px;
+}

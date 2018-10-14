@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台分类导航管理</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/main.css">
+<!--[if lte IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="js/home.css">
+<![endif]-->
+</head>
+<body>
+{% include 'head.html' %}
+<div class="container-fluid">
+  <div class="row">
+  		{% include 'left.html' %}
+
+      <div class="col-sm-9">
+        <div class="panel panel-default">
+
+          <div class="panel-heading">分类导航管理</div>
+
+          <div class="panel-body">
+              <div>分类导航增删板块</div>
+              <a href="/admin/addcategory" class="btn btn-primary btn-sm">添加分类导航</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>导航名</th>
+                  <th>导航排序</th>
+                  <th>导航url</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+
+
+              <tbody>
+
+                {% for user in users %}
+                <tr>
+                  <th scope="row">{{user._id.toString()}}</th>
+                  <td>{{user.name}}</td>
+                  <td>{{user.sorts}}</td>
+                  <td>{{user.urls}}</td>
+                  <td>
+                    <a href="/admin/editcategory?id={{user._id.toString()}}" class="btn btn-warning btn-sm">修改</a>&nbsp;&nbsp;
+                    <a href="/admin/deletecategory?id={{user._id.toString()}}" class="btn btn-danger btn-sm">删除</a></td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+            
+        </div>
+        <ul class="pagination pagination-sm">
+
+          <li><a href="/admin/category?page={{page-1}}">上一页</a></li>
+          <li>一共有{{nums}}条数据，每页显示{{limit}}条数据，一共{{pages}}页，当前第{{page}}页</li>
+          <li><a href="/admin/category?page={{page+1}}">下一页</a></li>
+          
+        </ul>
+      </div>
+  </div>
+</div>
+	<script type="text/javascript" src="/public/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+
+</body>
+</html>
